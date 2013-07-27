@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Travis CI - Setting Encryption</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+    body {
+      padding-top: 60px;
+      padding-bottom: 40px;
+    }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Encrypt Travis CI settings <small>What you type here, stays here</small></h1>
+      </div>
+
+      <div class="row">
+        <div class="span6 form-horizontal">
+          <!--<div class="control-group">
+            <label class="control-label" for="repo">Travis CI setup</label>
+            <div class="controls">
+              <select id="setup" class="span4">
+                <option>travis-ci.org</option>
+                <option>travis-ci.com</option>
+              </select>
+            </div>
+          </div>-->
+          <div class="control-group">
+            <label class="control-label" for="repo">Repository</label>
+            <div class="controls">
+              <input class="span4" id="repo" pattern="[^\/\s]+\/[^\/\s]+" placeholder="Repository" required="required" type="text">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="value">Value to encrypt</label>
+            <div class="controls">
+              <input class="span4" type="text" id="value" placeholder="Value" maxlength="128">
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="controls">
+              <button class="btn" id="encrypt">Encrypt</button>
+            </div>
+          </div>
+        </div>
+        <div class="span6" id="output">
+          &nbsp;
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span12">
+          <h2>What is this?</h2>
+          <p>
+            Build configuration on <a href='http://travis-ci.org'>Travis CI</a> is done via a <a href='http://about.travis-ci.org/docs/user/build-configuration/'>.travis.yml</a>
+            file, which is committed to the repository.
+          </p>
+          <p>
+            This is generally handy, as the build configuration is versioned with your code. However, sometimes you want configuration options in there that should not be publicly
+            visible. This is why you can <a href="http://about.travis-ci.org/docs/user/encryption-keys/">encrypt these values</a>. For security reasons, the encryption should happen
+            on your machine, rather than transmitting the unencrypted value over the network.
+          </p>
+          <p>
+            You can accomplish this by <a href="https://github.com/travis-ci/travis#installation">installing</a> our command line tool and using the
+            <a href="https://github.com/travis-ci/travis#encrypt">encrypt</a> command or right here on this website. This page will not send the plain text nor the encrypted value over
+            the network.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/cryptico.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+    var _gaq=[['_setAccount','UA-24868285-6'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src='//www.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  </body>
+</html>
