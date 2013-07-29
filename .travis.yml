@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+- 2.0.0
+- 1.9.3
+- jruby-19mode
+- rbx-19mode
+script: echo $foo
+env:
+  global:
+    secure: "A3RnuQcbnMBkR6Tmg+0IbPlULGskOX04SlCqOhrGVd6s/M48jjp8xMOLkXMeV3/EArUlmFXkBUAvMhhIxB2opw4EnrRoYCiC4gEyrIPLza84cJ+6HwO20Jdm6E7dSF+wMmSpY1IYC1UTBv27imw0nwkV/wITw6Lwdp8q7z8hS3O0u3MA/mvygTL7XvQ4lVdsGTmnDDYLjaIJZxKM5ODnscchcFS8qXZuqzwPSXjM+1vpQQO192Em9RFQ"
