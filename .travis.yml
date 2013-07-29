@@ -1,5 +1,5 @@
 script: echo $foo
 env:
-  global:
+  matrix:
   - secure: L5fT8zOtesDy5OpA9dtAAe0V5OyZAO2MVlqjTx4hdQZa1r5UE3Pkg6L9etq/nbT4PbJE8ZLw5wUiotoL64jhGqf9HhI5EKS8nkgLqYllaHSGX4cer//lB29klsW3irrKzk1n213ykhh1Pn9Q71HC9OAYmhYjuwFOncWJ6+oSLx4=
   - secure: bl5C7l9gitiyp33ROoJt8vb27zTBRUzXoD0LngPgNMIgEfjGOMmXobVZAoQrvJD7H/5uW8RA6eICOxV5y0fXcMK3iSyZ/Z5wYUlQs51qre1kfP7LoGXNchjdhBMUvMZ9gklcYXmFirWQcW6fcRkh0rvqWe9ICoY7h7IQcrrq0aw=
