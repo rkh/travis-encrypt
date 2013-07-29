@@ -17,15 +17,13 @@ $("#encrypt").bind("click", function() {
 
   success = function(result) {
     if(result.key) {
-      encrypted = cryptico.encrypt(value, result.key);
-      if(encrypted.status === "success") {
-        pre = $("<pre></pre>")
-        pre.text('secure: "' + encrypted.cipher + '"');
-        say('<p>Place the following in your <em>.travis.yml</em> instead of the unencrypted value:</p>');
-        output.append(pre);
-      } else {
-        error(encrypted.status);
-      }
+      crypt = new JSEncrypt();
+      crypt.setPublicKey(result.key);
+      secure = crypt.encrypt(value);
+      pre    = $("<pre></pre>")
+      pre.text('secure: ' + secure + '');
+      say('<p>Place the following in your <em>.travis.yml</em> instead of the unencrypted value:</p>');
+      output.append(pre);
     } else {
       error("Broken payload from Travis API");
     }
