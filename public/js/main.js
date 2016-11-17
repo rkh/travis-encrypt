@@ -19,11 +19,15 @@ $("#encrypt").bind("click", function() {
     if(result.key) {
       crypt = new JSEncrypt();
       crypt.setPublicKey(result.key);
-      secure = crypt.encrypt(value);
-      pre    = $("<pre></pre>")
-      pre.text('secure: ' + secure + '');
-      say('<p>Place the following in your <em>.travis.yml</em> instead of the unencrypted value:</p>');
-      output.append(pre);
+      if(!crypt.key.n) {
+        error("Broken RSA key from Travis API");
+      } else {
+        secure = crypt.encrypt(value);
+        pre    = $("<pre></pre>")
+        pre.text('secure: ' + secure);
+        say('<p>Place the following in your <em>.travis.yml</em> instead of the unencrypted value:</p>');
+        output.append(pre);
+      }
     } else {
       error("Broken payload from Travis API");
     }
